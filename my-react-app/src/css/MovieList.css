@@ -1,0 +1,17 @@
+.wrapper-movie-list {
+	position: absolute;
+	background-color: rgb(249, 207, 207);
+	width: 73vw;
+	margin: 1.5vw 8vw 1vw 19vw;
+	height: 88vh;
+	display: flex;
+	flex-flow: column wrap;
+	align-content: space-around
+	
+}
+
+/* .test {
+	background-color: aqua;
+	width: 30vw;
+	height: 100vh;
+} */

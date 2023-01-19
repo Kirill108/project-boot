@@ -82,7 +82,7 @@ h6 {
 
 .main {
     display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-    margin-right: 2rem;
+    gap: 4rem;
+    margin: 6rem;
+    margin-right: 20rem;
 }

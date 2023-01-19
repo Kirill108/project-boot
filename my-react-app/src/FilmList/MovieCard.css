@@ -2,12 +2,13 @@
     box-shadow: 2px 1px 8px rgb(25, 24, 24);
     display: flex;
     gap: 1rem;
+    height: 15vw;
+    width: 25vw;
 }
 
-/* .container-icon {
+.container-icon {
 	width: 10vw;
-	height: 15vw;
-} */
+}
 
 .card-content {
     display: flex;
@@ -17,8 +18,12 @@
 
 .header-card {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+}
+
+.container-svg {
+    margin-left: auto;
 }
 
 .film-icon {
@@ -26,7 +31,6 @@
 }
 
 .film-rating {
-    position: relative;
     font-size: 18px;
 }
 
@@ -54,14 +58,13 @@
 }
 
 .film-title {
-    
 }
 
 .button-more_link {
     font-size: 20px;
     background: none;
     margin-right: 1rem;
-	margin-top: auto;
+    margin-top: auto;
     padding: 10px 10px;
 }
 
@@ -69,17 +72,17 @@
     box-shadow: 0px 0px 8px rgb(25, 24, 24);
 }
 
-.header-card svg {
-	width: 35px;
-	height: 35px;
-	cursor: pointer;
+.container-svg > svg {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
 }
 
-.header-card svg path {
-	transition: all 0.3s ease-in-out;
+.container-svg >  svg > path {
+    transition: all 0.3s ease-in-out;
 }
 
-.header-card svg path:hover {
-	transition: all 0.3s ease-in-out;
-	fill: red;
+.container-svg > svg > path:hover {
+    transition: all 0.3s ease-in-out;
+    fill: red;
 }

@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useSelector } from 'react-redux';
 import {
     PaginationContext,
@@ -12,16 +13,10 @@ function PaginationBlock() {
     const totalPages = useSelector((state) => state.filmListLength)
 
     const nextPage = () => {
-        if (pageNow === Number(totalPages) - 1) {
-            disabled = true;
-        }
         setPageNow(pageNow + 1);
     };
 
     const previousPage = () => {
-        if (!pageNow) {
-            disabled = true;
-        }
         setPageNow(pageNow - 1);
     };
 
@@ -31,7 +26,7 @@ function PaginationBlock() {
                 className={pageNow ? `button-active` : 'button-disable'}
                 type="button"
                 onClick={previousPage}
-                disabled={false}
+                disabled={!pageNow}
             >
                 Назад
             </button>
@@ -43,7 +38,7 @@ function PaginationBlock() {
                 }
                 type="button"
                 onClick={nextPage}
-                disabled={false}
+                disabled={pageNow === Number(totalPages) - 1}
             >
                 Вперед
             </button>

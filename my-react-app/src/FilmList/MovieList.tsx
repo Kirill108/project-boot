@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { useDispatch } from 'react-redux';
 import { MovieCard } from './MovieCard';
 import './MovieList.css';

@@ -3,13 +3,12 @@ interface CheckboxProps {
     name: string;
 }
 
-function CheckboxGenre(props) {
-    // console.log('props: ', props);
+function CheckboxGenre(props : { genres : CheckboxProps }) {
     const { genres } = props;
     return (
         <div>
-            <input type="checkbox" id={genres.id} name="cartoon" />
-            <label htmlFor={genres.id}>{genres.name}</label>
+            <input type="checkbox" id={String(genres.id)} name="cartoon" />
+            <label htmlFor={String(genres.id)}>{genres.name}</label>
         </div>
     );
 }

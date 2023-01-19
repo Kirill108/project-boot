@@ -1,7 +1,12 @@
 import { FILM_LIST_LENGTH } from './action';
 // import { combineReducers } from 'redux';
 
-function films(state, action) {
+interface film {
+    type: string,
+    payload: number
+}
+
+function films(state, action:film) {
     switch (action.type) {
         case FILM_LIST_LENGTH:
             return {

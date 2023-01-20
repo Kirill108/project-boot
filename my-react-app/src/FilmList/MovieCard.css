@@ -7,7 +7,7 @@
 }
 
 .container-icon {
-	width: 10vw;
+    width: 10vw;
 }
 
 .card-content {
@@ -78,7 +78,7 @@
     cursor: pointer;
 }
 
-.container-svg >  svg > path {
+.container-svg > svg > path {
     transition: all 0.3s ease-in-out;
 }
 

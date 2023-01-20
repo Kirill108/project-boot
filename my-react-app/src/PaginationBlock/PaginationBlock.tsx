@@ -7,10 +7,17 @@ import {
 } from '../context/paginationContext';
 import './PaginationBlock.css';
 
+interface FilmListState {
+    filmListLength: number;
+}
+
 function PaginationBlock() {
-    const pageNow = useContext(PaginationContext);
+    const dataContext = useContext(PaginationContext);
+    const { pageNow } = dataContext;
     const setPageNow = useContext(SetPaginationContext);
-    const totalPages = useSelector((state) => state.filmListLength)
+    const totalPages = useSelector(
+        (state: FilmListState) => state.filmListLength
+    );
 
     const nextPage = () => {
         setPageNow(pageNow + 1);

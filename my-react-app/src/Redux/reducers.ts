@@ -2,11 +2,20 @@ import { FILM_LIST_LENGTH } from './action';
 // import { combineReducers } from 'redux';
 
 interface film {
-    type: string,
-    payload: number
+    type: string;
+    payload: number;
 }
 
-function films(state, action:film) {
+interface State {
+    filmListLength: number;
+}
+
+const initialState: State = {
+    filmListLength: 1,
+};
+
+// eslint-disable-next-line default-param-last
+function films(state = initialState, action: film) {
     switch (action.type) {
         case FILM_LIST_LENGTH:
             return {
@@ -18,4 +27,4 @@ function films(state, action:film) {
     }
 }
 
-export {films}
+export { films };

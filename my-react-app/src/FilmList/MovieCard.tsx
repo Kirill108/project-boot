@@ -33,7 +33,7 @@ function MovieCard(props: { film: filmProps }) {
                 <div className="card-content">
                     <div className="header-card">
                         <div className="film-rating">
-                            Рейтинг: {film.vote_average}
+                            Рейтинг: {film.vote_average} {film.release_date}
                         </div>
                         <div className="container-svg">
                             <svg

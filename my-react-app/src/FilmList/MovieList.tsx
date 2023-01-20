@@ -3,21 +3,25 @@ import { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { MovieCard } from './MovieCard';
 import './MovieList.css';
-import { filmList } from '../Data/filmList.js';
+import { dataFilmList } from '../Data/filmList.js';
 import { PaginationContext } from '../context/paginationContext';
 import { setTotalPages } from '../Redux/action';
 
 function MovieList() {
-    const JSXFilmList = filmList.map((film) => (
+    const dataContext = useContext(PaginationContext);
+    const { pageNow, filmList, setFilmList } = dataContext;
+
+    let JSXFilmList = filmList;
+    JSXFilmList = filmList.map((film) => (
         <MovieCard key={film.id} film={film} />
     ));
     const dispatch = useDispatch();
     const moviesPerPage = 10;
 
     const totalPages = JSXFilmList.length / moviesPerPage;
-    dispatch(setTotalPages(totalPages))
+    dispatch(setTotalPages(totalPages));
 
-    const selectPage = useContext(PaginationContext);
+    const selectPage = pageNow;
     const startFrom = selectPage * moviesPerPage;
 
     const tenFilmList = JSXFilmList.slice(startFrom, startFrom + moviesPerPage);

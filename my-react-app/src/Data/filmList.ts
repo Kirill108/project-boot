@@ -1,4 +1,4 @@
-export const filmList = [
+export const dataFilmList = [
     {
         adult: false,
         backdrop_path: '/qjGrUmKW78MCFG8PTLDBp67S27p.jpg',
@@ -1360,22 +1360,6 @@ export const filmList = [
         video: false,
         vote_average: 7,
         vote_count: 180,
-    },
-    {
-        adult: false,
-        backdrop_path: '/8K9w7juIRSEFM49ASyU2ROf30nP.jpg',
-        genre_ids: [],
-        id: 685833,
-        original_language: 'ko',
-        original_title: '목공소에서 생긴 일',
-        overview: '',
-        popularity: 65.343,
-        poster_path: '/bMhxD4DKRJM1dydluvsS5aL2Tci.jpg',
-        release_date: '2020-03-05',
-        title: '목공소에서 생긴 일',
-        video: false,
-        vote_average: 2,
-        vote_count: 1,
     },
     {
         adult: false,

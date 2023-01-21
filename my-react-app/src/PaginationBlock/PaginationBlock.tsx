@@ -50,7 +50,7 @@ function PaginationBlock() {
                 Вперед
             </button>
             <div className="page">
-                {pageNow + 1} of {totalPages}
+                {pageNow + 1} of {Math.round(totalPages)}
             </div>
         </div>
     );

@@ -1,5 +1,5 @@
-import { SortingBlock } from './FilterBlock/SortingBlock';
-import { PaginationBlock } from '../PaginationBlock/PaginationBlock';
+import { SortingBlock } from './filter-block/sorting_block';
+import { PaginationBlock } from '../pagination_block/pagination_block';
 import './Filter.css';
 
 function Filter() {

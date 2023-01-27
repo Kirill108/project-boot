@@ -1,3 +1,5 @@
+import { SELECT_YEAR } from "./const";
+
 export const dataFilmList = [
     {
         adult: false,
@@ -4049,3 +4051,8 @@ export const dataFilmList = [
         vote_count: 885,
     },
 ];
+
+export const initialFilmList = dataFilmList
+    .sort((a, b) => (a.popularity > b.popularity ? 1 : -1))
+    .reverse()
+    .filter((item) => SELECT_YEAR.year2020 === item.release_date.slice(0, 4));

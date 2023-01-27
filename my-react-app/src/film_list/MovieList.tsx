@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { MovieCard } from './MovieCard';
 import './MovieList.css';
-import { dataFilmList } from '../Data/filmList.js';
-import { PaginationContext } from '../context/paginationContext';
-import { setTotalPages } from '../Redux/action';
+import { initialFilmList } from '../data/film_list.js';
+import { PaginationContext } from '../context/pagination_context';
+import { setTotalPages } from '../redux/action';
 
 function MovieList() {
     const dataContext = useContext(PaginationContext);

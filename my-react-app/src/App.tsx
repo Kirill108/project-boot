@@ -1,18 +1,18 @@
 import { useEffect, useState } from 'react';
 import './css/App.css';
-import { Header } from './Header/Header';
-import { MovieList } from './FilmList/MovieList';
-import { Filter } from './filter/Filter';
+import { Header } from './header/header';
+import { MovieList } from './film_list/MovieList';
+import { Filter } from './filter/filter';
 import {
     PaginationContext,
     SetPaginationContext,
-} from './context/paginationContext';
-import { dataFilmList } from './Data/filmList';
+} from './context/pagination_context';
+import { dataFilmList } from './data/film_list';
 
 function App() {
     const [pageNow, setPageNow] = useState(0);
     const [filmList, setFilmList] = useState(dataFilmList);
-    
+
     // eslint-disable-next-line react/jsx-no-constructed-context-values
     const dataContext = {
         pageNow,

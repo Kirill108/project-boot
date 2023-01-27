@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import {
     PaginationContext,
     SetPaginationContext,
-} from '../context/paginationContext';
-import './PaginationBlock.css';
+} from '../context/pagination_context';
+import './pagination_block.css';
 
 interface FilmListState {
     filmListLength: number;
@@ -16,7 +16,7 @@ function PaginationBlock() {
     const { pageNow } = dataContext;
     const setPageNow = useContext(SetPaginationContext);
     const totalPages = useSelector(
-        (state: FilmListState) => state.filmListLength
+        (state: FilmListState) => state.films.filmListLength
     );
 
     const nextPage = () => {

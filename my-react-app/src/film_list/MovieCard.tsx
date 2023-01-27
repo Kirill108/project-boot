@@ -33,7 +33,12 @@ function MovieCard(props: { film: filmProps }) {
                 <div className="card-content">
                     <div className="header-card">
                         <div className="film-rating">
-                            Рейтинг: {film.vote_average} {film.release_date}
+                            Рейтинг: {film.vote_average} {film.release_date}{' '}
+                            {film.genre_ids.map((item) => {
+                                return (
+                                    <div style={{ color: 'red' }}>{item}</div>
+                                );
+                            })}
                         </div>
                         <div className="container-svg">
                             <svg

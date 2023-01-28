@@ -8,6 +8,7 @@ import {
     SetPaginationContext,
 } from './context/pagination_context';
 import { dataFilmList } from './data/film_list';
+import { Authorization } from './authorization/authorization';
 
 function App() {
     const [pageNow, setPageNow] = useState(0);
@@ -20,11 +21,6 @@ function App() {
         setFilmList,
     };
 
-    // useEffect(() => {
-    //     console.log('effect')
-    //     console.log('filmList: ', filmList);
-    // }, [filmList])
-
     return (
         <>
             <Header />
@@ -36,6 +32,7 @@ function App() {
                     <MovieList />
                 </div>
             </PaginationContext.Provider>
+            <Authorization/>
         </>
     );
 }

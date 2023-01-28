@@ -23,7 +23,6 @@ function SortingBlock() {
     const dispatch = useDispatch();
 
     const resultFilmList = useSelector((state) => state.filter.genres);
-    console.log('resultFilmList: ', resultFilmList);
     const currentFilmList = useSelector((state) => state.filter.currentList);
     const defaultFilmList = useSelector((state) => state.filter.defaultList);
     setFilmList(currentFilmList);

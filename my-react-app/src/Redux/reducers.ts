@@ -6,6 +6,8 @@ import {
     DELETE_FILTER_GENRES,
     ADD_FILTER_GENRES,
     RESET_FILTERS,
+    AUTHORIZATION,
+    MODAL_LOGIN,
 } from './action';
 import { combineReducers } from 'redux';
 import { initialFilmList } from '../data/film_list';
@@ -35,6 +37,14 @@ const dataFilter = {
     sortBy: '',
     genres: [],
     year: '',
+};
+
+const isAuthorization = Boolean(localStorage.getItem('isAuthorization'))
+
+
+const AUTHORIZATION = {
+    isAuthorization: isAuthorization ?? false,
+    isModalLogin: false,
 };
 
 // eslint-disable-next-line default-param-last
@@ -95,11 +105,28 @@ function filter(state = dataFilter, action) {
         case RESET_FILTERS: {
             return {
                 ...state,
-                genres: [], 
+                genres: [],
             };
         }
 
-        
+        default:
+            return state;
+    }
+}
+
+function authorization(state = AUTHORIZATION, action) {
+    switch (action.type) {
+        case AUTHORIZATION:
+            return {
+                ...state,
+                isAuthorization: action.payload,
+            };
+
+        case MODAL_LOGIN:
+            return {
+                ...state,
+                isModalLogin: action.payload,
+            };
         default:
             return state;
     }
@@ -108,6 +135,7 @@ function filter(state = dataFilter, action) {
 const filmsApp = combineReducers({
     films,
     filter,
+    authorization,
 });
 
 export { filmsApp };

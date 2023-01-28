@@ -1,4 +1,6 @@
 import './MovieCard.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { isModalLogin } from '../redux/action';
 
 interface filmProps {
     adult: boolean;
@@ -19,7 +21,24 @@ interface filmProps {
 
 function MovieCard(props: { film: filmProps }) {
     const { film } = props;
+    const dispatch = useDispatch();
     const imagePath = film.poster_path || film.backdrop_path;
+    const isAuthorizations = useSelector(
+        (state) => state.authorization.isAuthorization
+    );
+
+    const watchLater = () => {
+        if (!isAuthorizations) {
+            dispatch(isModalLogin(true));
+        }
+    };
+
+    const favoriteFilm = () => {
+        if (!isAuthorizations) {
+            dispatch(isModalLogin(true));
+        }
+    };
+
     return (
         <div>
             <div className="container-card">
@@ -33,15 +52,16 @@ function MovieCard(props: { film: filmProps }) {
                 <div className="card-content">
                     <div className="header-card">
                         <div className="film-rating">
-                            Рейтинг: {film.vote_average} {film.release_date}{' '}
-                            {film.genre_ids.map((item) => {
+                            Рейтинг: {film.vote_average}
+                            {/* {film.genre_ids.map((item) => {
                                 return (
                                     <div style={{ color: 'red' }}>{item}</div>
                                 );
-                            })}
+                            })} {film.release_date}{' '}*/}
                         </div>
                         <div className="container-svg">
                             <svg
+                                onClick={watchLater}
                                 viewBox="0 0 256 256"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
@@ -60,6 +80,7 @@ function MovieCard(props: { film: filmProps }) {
                                 />
                             </svg>
                             <svg
+                                onClick={favoriteFilm}
                                 viewBox="0 0 256 256"
                                 xmlns="http://www.w3.org/2000/svg"
                             >

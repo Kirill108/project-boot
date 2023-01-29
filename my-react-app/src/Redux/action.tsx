@@ -9,6 +9,7 @@ const AUTHORIZATION = 'AUTHORIZATION';
 const MODAL_LOGIN = 'MODAL_LOGIN';
 const WATCH_LATER = 'WATCH_LATER';
 const FAVORITE = 'FAVORITE';
+const TYPE_FILMS = 'TYPE_FILMS';
 
 const actionCreator = (type) => (payload) => ({
     type,
@@ -26,6 +27,7 @@ const isAuthorization = actionCreator(AUTHORIZATION);
 const isModalLogin = actionCreator(MODAL_LOGIN);
 const watchLater = actionCreator(WATCH_LATER);
 const favoriteFilm = actionCreator(FAVORITE);
+const typeFilms = actionCreator(TYPE_FILMS);
 
 export {
     setTotalPages,
@@ -39,6 +41,7 @@ export {
     isAuthorization,
     watchLater,
     favoriteFilm,
+    typeFilms,
     FILM_LIST_LENGTH,
     SORTING_OPTIONS,
     SORTING_YEAR,
@@ -50,4 +53,5 @@ export {
     MODAL_LOGIN,
     WATCH_LATER,
     FAVORITE,
+    TYPE_FILMS,
 };

@@ -53,6 +53,7 @@ const favoriteFilms = {
     favorite: [],
 };
 
+
 // eslint-disable-next-line default-param-last
 function films(state = initialState, action: film) {
     switch (action.type) {

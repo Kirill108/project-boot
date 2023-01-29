@@ -32,7 +32,7 @@ function Authorization(): JSX.Element | null {
             login === AUTHORIZATION.LOGIN &&
             password === AUTHORIZATION.PASSWORD
         ) {
-            dispatch(isAuthorization(true));
+            dispatch({type: 'AUTHORIZATION', payload: true});
             dispatch(isModalLogin(false));
             localStorage.setItem('isAuthorization', 'true');
         } else {

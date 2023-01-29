@@ -1,6 +1,7 @@
 import './MovieCard.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { isModalLogin } from '../redux/action';
+import { favoriteFilm, watchLater } from '../redux/action';
 
 interface filmProps {
     adult: boolean;
@@ -27,16 +28,19 @@ function MovieCard(props: { film: filmProps }) {
         (state) => state.authorization.isAuthorization
     );
 
-    const watchLater = () => {
+    const watchLaters = (event, film) => {
+        
         if (!isAuthorizations) {
             dispatch(isModalLogin(true));
         }
+        dispatch(watchLater(film))
     };
 
-    const favoriteFilm = () => {
+    const favoriteFilms = (event, film) => {
         if (!isAuthorizations) {
             dispatch(isModalLogin(true));
         }
+        dispatch(favoriteFilm(film))
     };
 
     return (
@@ -61,7 +65,7 @@ function MovieCard(props: { film: filmProps }) {
                         </div>
                         <div className="container-svg">
                             <svg
-                                onClick={watchLater}
+                                onClick={() => {watchLaters(event, film)}}
                                 viewBox="0 0 256 256"
                                 xmlns="http://www.w3.org/2000/svg"
                             >
@@ -80,7 +84,7 @@ function MovieCard(props: { film: filmProps }) {
                                 />
                             </svg>
                             <svg
-                                onClick={favoriteFilm}
+                                onClick={() => {favoriteFilms(event, film)} }
                                 viewBox="0 0 256 256"
                                 xmlns="http://www.w3.org/2000/svg"
                             >

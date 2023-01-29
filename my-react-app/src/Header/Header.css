@@ -3,25 +3,26 @@
     background-color: rgb(57, 123, 255);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     position: fixed;
     top: 0;
     width: 100%;
     overflow: hidden;
 }
 
-.header > a {
-    padding-left: 2rem;
+.nav > a {
+    padding-left: 3rem;
     color: white;
     font-size: 20px;
 }
 
-.header > a:hover {
+.nav > a:hover {
     color: rgb(207, 249, 242);
 }
 
-.header > button {
-    margin-right: 5rem;
+.login-button > button {
+    /* margin-right: 5rem; */
+    margin-left: auto;
+    margin-right: auto;
     background-color: #4caf50;
     color: white;
     padding: 10px 25px;
@@ -30,6 +31,12 @@
     border-radius: 1rem;
 }
 
-.header > button:hover {
+.login-button > button:hover {
     box-shadow: 0px 0px 8px rgb(25, 24, 24);
 }
+
+.login-button {
+    margin-left: 1250px;
+}
+
+

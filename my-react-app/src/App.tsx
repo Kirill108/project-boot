@@ -32,7 +32,7 @@ function App() {
                     <MovieList />
                 </div>
             </PaginationContext.Provider>
-            <Authorization/>
+            <Authorization />
         </>
     );
 }

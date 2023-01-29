@@ -1,4 +1,4 @@
-import './Header.css';
+import './header.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { isModalLogin, isAuthorization } from '../redux/action';
 
@@ -17,20 +17,30 @@ function Header() {
         localStorage.setItem('isAuthorization', '');
     };
 
-    console.log('isAuthorizations: ', isAuthorizations);
+   
 
     return (
         <div className="header">
-            <a href="#">Home</a>
-            {isAuthorizations ? (
-                <button type="button" onClick={exit}>
-                    Выйти
-                </button>
-            ) : (
-                <button type="button" onClick={authorization}>
-                    Войти
-                </button>
-            )}
+            <div className="nav">
+                <a href="#">Home</a>
+                <a href="#" className="nav-item-favorite">
+                    Избранные
+                </a>
+                <a href="#" className="nav-item-watch_later">
+                    Смотреть позже
+                </a>
+            </div>
+            <div className="login-button">
+                {isAuthorizations ? (
+                    <button type="button" onClick={exit}>
+                        Выйти
+                    </button>
+                ) : (
+                    <button type="button" onClick={authorization}>
+                        Войти
+                    </button>
+                )}
+            </div>
         </div>
     );
 }

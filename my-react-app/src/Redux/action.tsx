@@ -6,7 +6,9 @@ const DELETE_FILTER_GENRES = 'DELETE_FILTER_GENRES';
 const ADD_FILTER_GENRES = 'ADD_FILTER_GENRES';
 const RESET_FILTERS = 'RESET_FILTERS';
 const AUTHORIZATION = 'AUTHORIZATION';
-const MODAL_LOGIN = 'MODAL_LOGIN'
+const MODAL_LOGIN = 'MODAL_LOGIN';
+const WATCH_LATER = 'WATCH_LATER';
+const FAVORITE = 'FAVORITE';
 
 const actionCreator = (type) => (payload) => ({
     type,
@@ -21,7 +23,9 @@ const deleteFilterGenres = actionCreator(DELETE_FILTER_GENRES);
 const addFilterGenres = actionCreator(ADD_FILTER_GENRES);
 const resetFilters = actionCreator(RESET_FILTERS);
 const isAuthorization = actionCreator(AUTHORIZATION);
-const isModalLogin = actionCreator(MODAL_LOGIN)
+const isModalLogin = actionCreator(MODAL_LOGIN);
+const watchLater = actionCreator(WATCH_LATER);
+const favoriteFilm = actionCreator(FAVORITE);
 
 export {
     setTotalPages,
@@ -33,6 +37,8 @@ export {
     resetFilters,
     isModalLogin,
     isAuthorization,
+    watchLater,
+    favoriteFilm,
     FILM_LIST_LENGTH,
     SORTING_OPTIONS,
     SORTING_YEAR,
@@ -41,5 +47,7 @@ export {
     ADD_FILTER_GENRES,
     RESET_FILTERS,
     AUTHORIZATION,
-    MODAL_LOGIN
+    MODAL_LOGIN,
+    WATCH_LATER,
+    FAVORITE,
 };

@@ -8,6 +8,8 @@ import {
     RESET_FILTERS,
     AUTHORIZATION,
     MODAL_LOGIN,
+    WATCH_LATER,
+    FAVORITE,
 } from './action';
 import { combineReducers } from 'redux';
 import { initialFilmList } from '../data/film_list';
@@ -39,12 +41,16 @@ const dataFilter = {
     year: '',
 };
 
-const isAuthorization = Boolean(localStorage.getItem('isAuthorization'))
+const isAuthorization = Boolean(localStorage.getItem('isAuthorization'));
 
-
-const AUTHORIZATION = {
+const AUTHORIZATIONS = {
     isAuthorization: isAuthorization ?? false,
     isModalLogin: false,
+};
+
+const favoriteFilms = {
+    watchLater: [],
+    favorite: [],
 };
 
 // eslint-disable-next-line default-param-last
@@ -54,6 +60,24 @@ function films(state = initialState, action: film) {
             return {
                 ...state,
                 filmListLength: action.payload,
+            };
+        default:
+            return state;
+    }
+}
+
+function selectFilms(state = favoriteFilms, action) {
+    switch (action.type) {
+        case WATCH_LATER:
+            return {
+                ...state,
+                watchLater: [...state.watchLater, action.payload],
+            };
+
+        case FAVORITE:
+            return {
+                ...state,
+                favorite: [...state.favorite, action.payload],
             };
         default:
             return state;
@@ -114,7 +138,7 @@ function filter(state = dataFilter, action) {
     }
 }
 
-function authorization(state = AUTHORIZATION, action) {
+function authorization(state = AUTHORIZATIONS, action) {
     switch (action.type) {
         case AUTHORIZATION:
             return {
@@ -136,6 +160,7 @@ const filmsApp = combineReducers({
     films,
     filter,
     authorization,
+    selectFilms,
 });
 
 export { filmsApp };

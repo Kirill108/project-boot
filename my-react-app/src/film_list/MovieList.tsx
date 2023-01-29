@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { MovieCard } from './MovieCard';
 import './MovieList.css';
 import { initialFilmList } from '../data/film_list.js';
@@ -10,6 +10,14 @@ import { setTotalPages } from '../redux/action';
 function MovieList() {
     const dataContext = useContext(PaginationContext);
     const { pageNow, filmList, setFilmList } = dataContext;
+
+    const favoriteFilm = useSelector((state) => state.selectFilms.favorite);
+    console.log('favoriteFilm: ', favoriteFilm);
+
+    // const watchLater = useSelector((store) => store.selectFilms.watchLater);
+    // console.log('watchLater: ', watchLater);
+
+    // let JSXWatchLater = 
 
     let JSXFilmList = filmList;
     JSXFilmList = filmList.map((film) => (

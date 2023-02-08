@@ -1,7 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { isModalLogin } from '../redux/action';
 
-function IsAuthorizationNow() {
+function if (!isAuthorizations) {
+        dispatch(isModalLogin(true));
+    }() {
     const dispatch = useDispatch();
     const isAuthorizations = useSelector(
         (state) => state.authorization.isAuthorization
@@ -10,6 +12,10 @@ function IsAuthorizationNow() {
     if (!isAuthorizations) {
         dispatch(isModalLogin(true));
     }
+
+    return null;
 }
 
-export { IsAuthorizationNow };
+export { if (!isAuthorizations) {
+        dispatch(isModalLogin(true));
+    } };

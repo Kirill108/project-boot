@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './css/App.css';
 import { Header } from './header/header';
-import { MovieList } from './film_list/MovieList';
+import { MovieList } from './film_list/movie_list';
 import { Filter } from './filter/filter';
 import {
     PaginationContext,
@@ -23,7 +23,7 @@ function App() {
 
     return (
         <>
-            <Header />
+            <Header setPageNow={setPageNow} />
             <PaginationContext.Provider value={dataContext}>
                 <div className="main">
                     <SetPaginationContext.Provider value={setPageNow}>

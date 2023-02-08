@@ -84,5 +84,5 @@
 
 .container-svg > svg > path:hover {
     transition: all 0.3s ease-in-out;
-    fill: red;
+    fill: rgb(222, 115, 115);
 }

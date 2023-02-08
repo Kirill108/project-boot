@@ -10,6 +10,11 @@ const MODAL_LOGIN = 'MODAL_LOGIN';
 const WATCH_LATER = 'WATCH_LATER';
 const FAVORITE = 'FAVORITE';
 const TYPE_FILMS = 'TYPE_FILMS';
+const VIEW_SAVE_FILMS = 'VIEW_SAVE_FILMS';
+const DELETE_WATCH_LATER = 'DELETE_WATCH_LATER';
+const DELETE_FAVORITE = 'DELETE_FAVORITE';
+const ADD_COLOR_CURRENT_LIST = 'ADD_COLOR_CURRENT_LIST';
+const SET_INITIAL_LIST = 'SET_INITIAL_LIST';
 
 const actionCreator = (type) => (payload) => ({
     type,
@@ -28,6 +33,11 @@ const isModalLogin = actionCreator(MODAL_LOGIN);
 const watchLater = actionCreator(WATCH_LATER);
 const favoriteFilm = actionCreator(FAVORITE);
 const typeFilms = actionCreator(TYPE_FILMS);
+const viewSaveFilms = actionCreator(VIEW_SAVE_FILMS);
+const deleteWatchLater = actionCreator(DELETE_WATCH_LATER);
+const deleteFavorite = actionCreator(DELETE_FAVORITE);
+const addColorCurrentList = actionCreator(ADD_COLOR_CURRENT_LIST);
+const setInitialList = actionCreator(SET_INITIAL_LIST);
 
 export {
     setTotalPages,
@@ -42,6 +52,11 @@ export {
     watchLater,
     favoriteFilm,
     typeFilms,
+    deleteWatchLater,
+    deleteFavorite,
+    viewSaveFilms,
+    setInitialList,
+    addColorCurrentList,
     FILM_LIST_LENGTH,
     SORTING_OPTIONS,
     SORTING_YEAR,
@@ -54,4 +69,9 @@ export {
     WATCH_LATER,
     FAVORITE,
     TYPE_FILMS,
+    VIEW_SAVE_FILMS,
+    DELETE_WATCH_LATER,
+    DELETE_FAVORITE,
+    ADD_COLOR_CURRENT_LIST,
+    SET_INITIAL_LIST,
 };

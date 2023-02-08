@@ -1,9 +1,10 @@
 import './header.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { isModalLogin, isAuthorization } from '../redux/action';
-import { IsAuthorizationNow } from '../helper/is_authorizations';
+import { viewSaveFilms } from '../redux/action';
+import { LS_KEY, LIST_NOW } from '../data/const';
 
-function Header() {
+function Header({ setPageNow }) {
     const dispatch = useDispatch();
     const isAuthorizations = useSelector(
         (state) => state.authorization.isAuthorization
@@ -19,18 +20,35 @@ function Header() {
     };
 
     const favorite = () => {
-        IsAuthorizationNow();
+        if (!isAuthorizations) {
+            dispatch(isModalLogin(true));
+        }
+        dispatch(viewSaveFilms(LIST_NOW.FAVORITE));
     };
 
     const watchLater = () => {
-        IsAuthorizationNow();
+        if (!isAuthorizations) {
+            dispatch(isModalLogin(true));
+        }
+        dispatch(viewSaveFilms(LIST_NOW.WATCH_LATER));
+    };
+
+    const home = () => {
+        // dispatch(viewSaveFilms(LIST_NOW.HOME));
+    };
+
+    const clearContainerFilm = (event) => {
+        // event.target.parentNode.parentNode.nextSibling.lastChild
+        setPageNow(0);
     };
 
     return (
         <div className="header">
-            <div className="nav">
-                <a href="#">Home</a>
-                <a href="#" className="nav-item-favorite" onClick={favorite}>
+            <div className="nav" onClick={clearContainerFilm}>
+                <a href="#" onClick={home}>
+                    Home
+                </a>
+                {/* <a href="#" className="nav-item-favorite" onClick={favorite}>
                     Избранные
                 </a>
                 <a
@@ -39,7 +57,7 @@ function Header() {
                     onClick={watchLater}
                 >
                     Смотреть позже
-                </a>
+                </a> */}
             </div>
             <div className="login-button">
                 {isAuthorizations ? (

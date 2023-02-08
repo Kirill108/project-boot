@@ -14,7 +14,7 @@
 ## Установка Eslint, Redux
 
 - `npm init @eslint/config`
-- `npm install -D eslint-plugin-react eslint-plugin-react-hooks eslint-config-airbnb redux react-redux react-router-dom`
+- `npm install -D eslint-plugin-react eslint-plugin-react-hooks eslint-config-airbnb redux react-redux react-router-dom @reduxjs/toolkit`
 
 ---
 

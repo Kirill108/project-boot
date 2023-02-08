@@ -7,19 +7,8 @@ function useFilterCheckbox(event, argumentsCheckbox) {
     const genreId = event.target.id;
     let allSorted = [];
     useEffect(() => {
-        console.log('genre: ', genre);
-        // if (genre.length) {
-        //     setFilmList(
-        //         genre.map((itemId) => {
-        //             return [...copyFilmList].filter((item) => {
-        //                 return item.genre_ids.includes(Number(itemId), 0);
-        //             });
-        //         })
-        //     );
-        // }
     }, [genre]);
     if (event.target.checked) {
-        
         setGenre([...genre, genreId]);
 
         if (!genre.length) {
@@ -37,9 +26,8 @@ function useFilterCheckbox(event, argumentsCheckbox) {
         }
     }
     return {
-        allSorted
-    }
-    // console.log('event.target.checked: ', event.target.checked);
+        allSorted,
+    };
 }
 
 export { useFilterCheckbox };
